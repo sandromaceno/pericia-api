@@ -17,7 +17,6 @@ deploy:
   script:
     docker tag docker-to-aws-with-java:latest smaceno/docker-to-aws-with-java:latest;
     docker push smaceno/docker-to-aws-with-java;
-    skip_cleanup: true
   on:
     branch: master
 notifications:

@@ -3,7 +3,6 @@ jdk:
   - openjdk8
 before_install:
   - sudo apt-get update
-  - cd /
   - echo "Let's start Maven Package!"
   - mvn clean package
   - cd ..

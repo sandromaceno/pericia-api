@@ -3,10 +3,8 @@ jdk:
   - openjdk8
 before_install:
   - sudo apt-get update
-  - cd app/
   - echo "Let's start Maven Package!"
   - mvn clean package
-  - cd ..
   - echo "We are in the Docker folder!"
 script:
   - docker-compose build

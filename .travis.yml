@@ -3,7 +3,7 @@ jdk:
   - oraclejdk8
 before_install:
   - sudo apt-get update
-  - cd app/
+  - cd /
   - echo "Let's start Maven Package!"
   - mvn clean package
   - cd ..
@@ -15,8 +15,8 @@ before_deploy:
 deploy:
   provider: script
   script:
-    docker tag docker-to-aws-with-java:latest smaceno/docker-to-aws-with-java:latest;
-    docker push smaceno/docker-to-aws-with-java;
+    docker tag docker-to-aws-with-java:latest sandromaceno/docker-to-aws-with-java:latest;
+    docker push sandromaceno/docker-to-aws-with-java;
   on:
     branch: master
 notifications:

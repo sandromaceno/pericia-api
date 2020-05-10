@@ -6,7 +6,7 @@ before_install:
   - chmod +x mvnw
   - echo "Let's start Maven Package!"
   - mvn clean install
-  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn -N io.takari:maven:wrapper
   - echo "We are in the Docker folder!"
 script:
   - docker-compose build

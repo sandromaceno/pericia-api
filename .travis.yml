@@ -7,6 +7,7 @@ before_install:
   - mvn clean install
   - echo "We are in the Docker folder!"
   - chmod +x mvnw
+  - mvnw clean install
 script:
   - docker-compose build
 before_deploy:
@@ -16,6 +17,7 @@ deploy:
   script:
     docker tag docker-to-aws-with-java:latest smaceno/docker-to-aws-with-java:latest;
     docker push smaceno/docker-to-aws-with-java;
+    skip_cleanup: true
   on:
     branch: master
 notifications:

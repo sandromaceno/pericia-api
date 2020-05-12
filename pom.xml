@@ -79,12 +79,6 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency> 
         
-        <!-- for Migrations support -->
-<!--         <dependency> -->
-<!-- 		   <groupId>org.flywaydb</groupId> -->
-<!-- 		   <artifactId>flyway-core</artifactId> -->
-<!-- 		</dependency>   -->
-        
         <!-- for Model Mapper support -->
         <dependency>
 		    <groupId>com.github.dozermapper</groupId>

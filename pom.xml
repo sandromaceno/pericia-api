@@ -80,10 +80,10 @@
         </dependency> 
         
         <!-- for Migrations support -->
-        <dependency>
-		   <groupId>org.flywaydb</groupId>
-		   <artifactId>flyway-core</artifactId>
-		</dependency>  
+<!--         <dependency> -->
+<!-- 		   <groupId>org.flywaydb</groupId> -->
+<!-- 		   <artifactId>flyway-core</artifactId> -->
+<!-- 		</dependency>   -->
         
         <!-- for Model Mapper support -->
         <dependency>

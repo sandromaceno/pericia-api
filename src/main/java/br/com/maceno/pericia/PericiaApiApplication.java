@@ -7,20 +7,16 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import br.com.maceno.pericia.domain.Categoria;
-import br.com.maceno.pericia.domain.Produto;
-import br.com.maceno.pericia.repositories.CategoriaRepository;
-import br.com.maceno.pericia.repositories.ProdutoRepository;
+import br.com.maceno.pericia.dto.UsuarioDTO;
+import br.com.maceno.pericia.enums.TipoAcessoEnum;
+import br.com.maceno.pericia.repositories.UsuarioRepository;
 
 @SpringBootApplication
 public class PericiaApiApplication implements CommandLineRunner{
 
 	@Autowired
-	private CategoriaRepository categoriaRepository;
+	private UsuarioRepository usuarioRepository;
 
-	@Autowired
-	private ProdutoRepository produtoRepository;
-	
 	public static void main(String[] args) {
 		SpringApplication.run(PericiaApiApplication.class, args);
 	}
@@ -28,22 +24,10 @@ public class PericiaApiApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Categoria cat1 = new Categoria(null, "Informática");
-		Categoria cat2 = new Categoria(null, "Escritório");
+		UsuarioDTO usu1 = new UsuarioDTO(null, "Sandro", "smaceno@gmail.com", "996767030", TipoAcessoEnum.POLICIAL);
+		UsuarioDTO usu2 = new UsuarioDTO(null, "Luis", "luis@gmail.com", "9685741414", TipoAcessoEnum.CIVIL);
 		
-		Produto p1 = new Produto(null, "Computador", 3000.00);
-		Produto p2 = new Produto(null, "Impressora", 800.00);
-		Produto p3 = new Produto(null, "Mouse", 80.00);
-		
-		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));
-		cat2.getProdutos().addAll(Arrays.asList(p2));
-		
-		p1.getCategorias().addAll(Arrays.asList(cat1));
-		p2.getCategorias().addAll(Arrays.asList(cat1,cat2));
-		p3.getCategorias().addAll(Arrays.asList(cat1));
-		
-		categoriaRepository.saveAll(Arrays.asList(cat1,cat2));
-		produtoRepository.saveAll(Arrays.asList(p1,p2,p3));
+		usuarioRepository.saveAll(Arrays.asList(usu1, usu2));
 		
 	}
 	

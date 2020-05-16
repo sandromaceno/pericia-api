@@ -1,39 +1,43 @@
 package br.com.maceno.pericia.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.Length;
+
+import br.com.maceno.pericia.constants.MensagemConstants;
 import br.com.maceno.pericia.enums.TipoAcessoEnum;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
 @Entity
-@ApiModel("Usuario")
-public class UsuarioDTO {
+public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@ApiModelProperty(value = "Nome do usuário")
+	@Length(min=3, max=120, message=MensagemConstants.CAMPO_TAMANHO_NOME)
 	private String nome;
 	
-	@ApiModelProperty(value = "Email do usuário")
+	@NotEmpty(message=MensagemConstants.CAMPO_OBRIGATORIO)
+	@Email(message=MensagemConstants.EMAIL_INVALIDO)
+	@Column(unique = true)
 	private String email;
 	
-	@ApiModelProperty(value = "Telefone para contato")
 	private String telefone;
 	
-	@ApiModelProperty(value = "Tipo de acesso")
 	private TipoAcessoEnum tipoAcesso;
 	
-	public UsuarioDTO() {
-		
-	}
 	
-	public UsuarioDTO(Integer id, String nome, String email, String telefone, TipoAcessoEnum tipoAcesso) {
+	public Usuario() {
+		super();
+	}
+
+	public Usuario(Integer id, String nome, String email, String senha, String telefone, TipoAcessoEnum tipoAcesso) {
 		super();
 		this.id = id;
 		this.nome = nome;

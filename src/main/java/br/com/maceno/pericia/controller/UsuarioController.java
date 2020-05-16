@@ -33,6 +33,12 @@ public class UsuarioController {
 		return ResponseEntity.ok().body(usuario);
 	}
 	
+	@RequestMapping(value="/email", method=RequestMethod.GET)
+	public ResponseEntity<Usuario> buscar(@PathVariable String email) {
+		Usuario usuario = usuarioService.buscarPorEmail(email);
+		return ResponseEntity.ok().body(usuario);
+	}
+	
 	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<List<Usuario>> buscarTodos() {
 		List<Usuario> usuario = usuarioService.buscarTodos();

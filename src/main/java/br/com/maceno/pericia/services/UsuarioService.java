@@ -49,6 +49,9 @@ public class UsuarioService {
 		Usuario novoUsuario = buscar(usuario.getId());
 		updateData(novoUsuario, usuario);
 		buscar(usuario.getId());
+		if(null == usuario.getTipoAcesso()) {
+			usuario.setTipoAcesso(TipoAcessoEnum.CIVIL);
+		}
 		return usuarioRepository.save(usuario);
 	}
 	

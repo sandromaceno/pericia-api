@@ -56,8 +56,7 @@ public class UsuarioController {
 		return ResponseEntity.ok().body(usuario);
 	}
 	
-	@SuppressWarnings("deprecation")
-	@RequestMapping(method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Void> insert(@Valid @RequestBody Usuario usuario) {
 		usuario = usuarioService.inserir(usuario);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(usuario.getId()).toUri();

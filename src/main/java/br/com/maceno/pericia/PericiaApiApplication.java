@@ -1,15 +1,13 @@
 package br.com.maceno.pericia;
 
-import java.util.Arrays;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import br.com.maceno.pericia.dto.Usuario;
+import br.com.maceno.pericia.entity.Usuario;
 import br.com.maceno.pericia.enums.TipoAcessoEnum;
-import br.com.maceno.pericia.repositories.UsuarioRepository;
+import br.com.maceno.pericia.repository.UsuarioRepository;
 
 @SpringBootApplication
 public class PericiaApiApplication implements CommandLineRunner{

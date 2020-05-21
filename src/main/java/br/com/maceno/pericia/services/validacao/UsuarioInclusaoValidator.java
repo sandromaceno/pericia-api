@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.maceno.pericia.constants.MensagemConstants;
 import br.com.maceno.pericia.controller.exeption.FieldMessage;
-import br.com.maceno.pericia.dto.Usuario;
-import br.com.maceno.pericia.repositories.UsuarioRepository;
+import br.com.maceno.pericia.entity.Usuario;
+import br.com.maceno.pericia.repository.UsuarioRepository;
 
 public class UsuarioInclusaoValidator implements ConstraintValidator<UsuarioInclusao, Usuario> {
 	

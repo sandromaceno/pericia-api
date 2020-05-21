@@ -1,4 +1,4 @@
-package br.com.maceno.pericia.dto;
+package br.com.maceno.pericia.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

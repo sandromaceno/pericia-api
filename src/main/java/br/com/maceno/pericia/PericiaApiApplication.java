@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import br.com.maceno.pericia.entity.Usuario;
 import br.com.maceno.pericia.enums.TipoAcessoEnum;
 import br.com.maceno.pericia.repository.UsuarioRepository;
+import br.com.maceno.pericia.services.Pessoa;
+import br.com.maceno.pericia.services.PessoaServiceFactory;
 
 @SpringBootApplication
 public class PericiaApiApplication implements CommandLineRunner{
@@ -16,7 +18,17 @@ public class PericiaApiApplication implements CommandLineRunner{
 	private UsuarioRepository usuarioRepository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(PericiaApiApplication.class, args);
+		
+		PessoaServiceFactory factory = new PessoaServiceFactory();
+		Pessoa pessoa = new Pessoa() {};
+		
+		pessoa.nome = "Sandro";
+        pessoa.email = "smaceno@gmail.com";
+        pessoa.telefone = "99767670";
+        pessoa.tipoAcesso = TipoAcessoEnum.POLICIAL;
+        factory.getPessoa(pessoa);
+        
+		//SpringApplication.run(PericiaApiApplication.class, args);
 	}
 
 	@Override

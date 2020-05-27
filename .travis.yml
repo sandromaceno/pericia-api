@@ -1,12 +1,12 @@
 language: java
 jdk:
-  - oraclejdk8
+  - openjdk8
 before_install:
   - sudo apt-get update
-  - cd app/
+  - chmod +x mvnw
   - echo "Let's start Maven Package!"
-  - mvn clean package
-  - cd ..
+  - mvn clean install
+  - mvn -N io.takari:maven:wrapper
   - echo "We are in the Docker folder!"
 script:
   - docker-compose build

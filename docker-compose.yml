@@ -9,7 +9,7 @@ services:
       MYSQL_ROOT_PASSWORD: docker
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
-      MYSQL_DATABASE: docker_to_aws_with_java
+      MYSQL_DATABASE: DockerToAWSWithJava
     ports:
       - "3308:3306"
     networks:

@@ -1,7 +1,6 @@
 package br.com.maceno.pericia;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
